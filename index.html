@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BGM</title>
+<style>
+  html,body{height:100%;margin:0;background:#111;display:grid;place-items:center}
+  button{font-size:1.2rem;padding:.8em 1.6em;border:0;border-radius:999px;cursor:pointer}
+</style>
+</head>
+<body>
+<button id="btn">▶ 재생</button>
+<audio id="bgm" src="bgm.mp3" loop></audio>
+<script>
+  const a = document.getElementById('bgm'), b = document.getElementById('btn');
+  b.onclick = () => {
+    if (a.paused) { a.play(); b.textContent = '❚❚ 일시정지'; }
+    else { a.pause(); b.textContent = '▶ 재생'; }
+  };
+</script>
+</body>
+</html>
